@@ -181,7 +181,7 @@ Row1|Row2|Row3|Row4|Row5|
 
 
 ###To install
-Download all files, unzip and copy them into your Current Folder path in Matlab. Then in the Matlab command window type
+Download all files (click Download ZIP on the right), unzip and copy them into your Current Folder path in Matlab. Then in the Matlab command window type
 ```MATLAB
 CalciumSignalExtractGUI;
 ```
