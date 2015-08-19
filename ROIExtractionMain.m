@@ -104,14 +104,14 @@ classdef ROIExtractionMain  < handle
             else
                 %get directory and files from user
                 try
-                    [file_list, path_list] = ReadFilesFromFolder();
-                catch err
+                    [file_list, path_list] = ROIExtractionMain.ReadImageFilesFromFolder();
+               catch err
                     disp('no folder selected');
                     %disp(err.message);
                     set(handles.text1,'String', 'no folder selected');
                     pause(0.01);
                     rethrow(err);
-                end
+               end
             end
             
             
@@ -230,7 +230,7 @@ classdef ROIExtractionMain  < handle
             if get(handles.togglebutton1,'Value') == 1
                 error('STOPPED');
             end
-                        
+            
             %do line background substraction Y
             if get(handles.checkbox4,'Value') == 1
                 outlier_threshold = str2num(get(handles.edit11,'String'));
@@ -283,7 +283,7 @@ classdef ROIExtractionMain  < handle
                 end
                 
             end
-           
+            
             
             
             %check if user aborted
@@ -669,6 +669,19 @@ classdef ROIExtractionMain  < handle
             BW3 = imextendedmax(i_eq, 0.25);
         end
         
+        function [file_list, path_list] = ReadImageFilesFromFolder
+            
+            %ask user for folder
+            d = uigetdir('C:\Users\','Select a folder containing images');
+            files = dir(fullfile(d, '*.tif*'));
+            file_list{length(files)} = '';
+            path_list{length(files)} = '';
+            for i = 1:length(files)
+                path_list{i} = [d,'\',files(i).name];
+                file_list{i} = [files(i).name];
+            end
+            
+        end
     end
     
 end
