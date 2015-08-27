@@ -415,7 +415,7 @@ classdef ROIExtractionMain  < handle
             offset_for_sync = 0.01;
             
             %create data object for plot
-            PlotObject = BehaviorBoxPlotDataExternal;
+            PlotObject = BehaviorData;
             %add ROI data and scale and normalize to behavior data
             PlotObject.AddRoiDataAndScale(All_Roi_data, y_spacing, x_spacing, do_normalize, offset_for_sync);
             %calculate Behavior data (not in yet)

@@ -1083,6 +1083,7 @@ catch err
     
     ShowAllButtonsExceptStop(handles);
 end
+
 ShowAllButtonsExceptStop(handles);
 
 % --- Executes on button press in pushbutton8.
