@@ -67,8 +67,7 @@ classdef ROIExtractionMain  < handle
                 
             catch err
                 disp('no file selected');
-                %disp(err.message);
-                set(handles.text1,'String', 'no file selected');
+               set(handles.text1,'String', 'no file selected');
                 pause(0.01);
                 
             end
@@ -540,7 +539,6 @@ classdef ROIExtractionMain  < handle
             xlim([0 xmax]);
             
             hold off
-            
         end
         
         

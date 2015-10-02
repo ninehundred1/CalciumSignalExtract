@@ -108,6 +108,7 @@ classdef AddDataAndPlot < handle
         Stimulus_315_y;
         Stimulus_337_x;
         Stimulus_337_y;
+        Stim_legend_string = [];
         
     end
     
@@ -261,6 +262,13 @@ classdef AddDataAndPlot < handle
                 patch_x = [this.Behavior_matrix(4,i), this.Behavior_matrix(4,i+1), this.Behavior_matrix(4,i+1), this.Behavior_matrix(4,i)];
                 patch_y = [MIN, MIN, MAX, MAX];
                 
+                
+                %if not found in legend string, add
+                found = find(this.Stim_legend_string==this.Behavior_matrix(5,i));
+                if size(found,2) == 0 && this.Behavior_matrix(5,i) ~= -1
+                    
+                   this.Stim_legend_string(end+1) = this.Behavior_matrix(5,i);
+                end
                 %add to matrix
                 
                 switch this.Behavior_matrix(5,i)
@@ -269,6 +277,7 @@ classdef AddDataAndPlot < handle
                     case 1
                         this.Stimulus_left_x(end+1,1:4)= patch_x;
                         this.Stimulus_left_y(end+1,1:4)= patch_y;
+                        
                         
                         %if the ID for the stimulus matched right (11)
                     case 11

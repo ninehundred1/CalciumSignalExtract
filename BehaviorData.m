@@ -36,7 +36,7 @@ classdef BehaviorData < handle
         Stimulus_right_y;
         Max_y;
         DateHeader;
-        
+                
         
     end
        

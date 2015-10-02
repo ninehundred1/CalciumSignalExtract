@@ -267,6 +267,7 @@ function PlotAllData(handles)
 global globaldata
 set(handles.text1,'String', ' ');
 
+
 %create object
 PlotObject = AddDataAndPlot;
 
@@ -324,6 +325,9 @@ else
     %pass in the object, so you can access the data from object, which has been modified and not
     %the one from the gui
     PlotAll(handles, PlotObject,plot_two_windows, y_min, y_max, x_min, x_max);
+    if  ~isempty(PlotObject.Stim_legend_string)
+       set(handles.text1,'String',mat2str(PlotObject.Stim_legend_string));   
+    end
 end
 
 
@@ -577,6 +581,7 @@ if size(PlotObject.Stimulus_left_x,1) < 1
         hold on
         for i = 1:size(PlotObject.Stimulus_0_x,1)
             patch(PlotObject.Stimulus_0_x(i,:), PlotObject.Stimulus_0_y(i,:),[0.5 0 0], 'EdgeColor','none','FaceAlpha', 0.5)
+           
         end
         hold off
     end
@@ -585,6 +590,7 @@ if size(PlotObject.Stimulus_left_x,1) < 1
         hold on
         for i = 1:size(PlotObject.Stimulus_12_x,1)
             patch(PlotObject.Stimulus_12_x(i,:), PlotObject.Stimulus_12_y(i,:),[0 1 0], 'EdgeColor','none','FaceAlpha', 0.5)
+          
         end
         hold off
     end
@@ -593,6 +599,7 @@ if size(PlotObject.Stimulus_left_x,1) < 1
         hold on
         for i = 1:size(PlotObject.Stimulus_22_x,1)
             patch(PlotObject.Stimulus_22_x(i,:), PlotObject.Stimulus_22_y(i,:),[0 1 1], 'EdgeColor','none','FaceAlpha', 0.5)
+        
         end
         hold off
     end
@@ -601,6 +608,7 @@ if size(PlotObject.Stimulus_left_x,1) < 1
         hold on
         for i = 1:size(PlotObject.Stimulus_33_x,1)
             patch(PlotObject.Stimulus_33_x(i,:), PlotObject.Stimulus_33_y(i,:),[1 0 0], 'EdgeColor','none','FaceAlpha', 0.5)
+       
         end
         hold off
     end
@@ -609,6 +617,7 @@ if size(PlotObject.Stimulus_left_x,1) < 1
         hold on
         for i = 1:size(PlotObject.Stimulus_45_x,1)
             patch(PlotObject.Stimulus_45_x(i,:), PlotObject.Stimulus_45_y(i,:),[1 0 1], 'EdgeColor','none','FaceAlpha', 0.5)
+       
         end
         hold off
     end
@@ -617,6 +626,7 @@ if size(PlotObject.Stimulus_left_x,1) < 1
         hold on
         for i = 1:size(PlotObject.Stimulus_56_x,1)
             patch(PlotObject.Stimulus_56_x(i,:), PlotObject.Stimulus_56_y(i,:),[0.5 1 0], 'EdgeColor','none','FaceAlpha', 0.5)
+        
         end
         hold off
     end
@@ -625,6 +635,7 @@ if size(PlotObject.Stimulus_left_x,1) < 1
         hold on
         for i = 1:size(PlotObject.Stimulus_67_x,1)
             patch(PlotObject.Stimulus_67_x(i,:), PlotObject.Stimulus_67_y(i,:),[0 0 0], 'EdgeColor','none','FaceAlpha', 0.5)
+       
         end
         hold off
     end
@@ -633,6 +644,7 @@ if size(PlotObject.Stimulus_left_x,1) < 1
         hold on
         for i = 1:size(PlotObject.Stimulus_78_x,1)
             patch(PlotObject.Stimulus_78_x(i,:), PlotObject.Stimulus_78_y(i,:),[1 0.2 0.7], 'EdgeColor','none','FaceAlpha', 0.5)
+      
         end
         hold off
     end
@@ -641,6 +653,7 @@ if size(PlotObject.Stimulus_left_x,1) < 1
         hold on
         for i = 1:size(PlotObject.Stimulus_90_x,1)
             patch(PlotObject.Stimulus_90_x(i,:), PlotObject.Stimulus_90_y(i,:),[1 0.7 0.2], 'EdgeColor','none','FaceAlpha', 0.5)
+       
         end
         hold off
     end
@@ -649,6 +662,7 @@ if size(PlotObject.Stimulus_left_x,1) < 1
         hold on
         for i = 1:size(PlotObject.Stimulus_101_x,1)
             patch(PlotObject.Stimulus_101_x(i,:), PlotObject.Stimulus_101_y(i,:),[0.7 1 0], 'EdgeColor','none','FaceAlpha', 0.5)
+        
         end
         hold off
     end
@@ -657,6 +671,7 @@ if size(PlotObject.Stimulus_left_x,1) < 1
         hold on
         for i = 1:size(PlotObject.Stimulus_112_x,1)
             patch(PlotObject.Stimulus_112_x(i,:), PlotObject.Stimulus_112_y(i,:),[0.7 0 0], 'EdgeColor','none','FaceAlpha', 0.5)
+       
         end
         hold off
     end
@@ -665,6 +680,7 @@ if size(PlotObject.Stimulus_left_x,1) < 1
         hold on
         for i = 1:size(PlotObject.Stimulus_123_x,1)
             patch(PlotObject.Stimulus_123_x(i,:), PlotObject.Stimulus_123_y(i,:),[0.7 0 1], 'EdgeColor','none','FaceAlpha', 0.5)
+   
         end
         hold off
     end
@@ -673,6 +689,7 @@ if size(PlotObject.Stimulus_left_x,1) < 1
         hold on
         for i = 1:size(PlotObject.Stimulus_135_x,1)
             patch(PlotObject.Stimulus_135_x(i,:), PlotObject.Stimulus_135_y(i,:),[0.7 0.7 0], 'EdgeColor','none','FaceAlpha', 0.5)
+      
         end
         hold off
     end
@@ -681,6 +698,7 @@ if size(PlotObject.Stimulus_left_x,1) < 1
         hold on
         for i = 1:size(PlotObject.Stimulus_146_x,1)
             patch(PlotObject.Stimulus_146_x(i,:), PlotObject.Stimulus_146_y(i,:),[0.7 0 0.7], 'EdgeColor','none','FaceAlpha', 0.5)
+      
         end
         hold off
     end
@@ -689,6 +707,7 @@ if size(PlotObject.Stimulus_left_x,1) < 1
         hold on
         for i = 1:size(PlotObject.Stimulus_157_x,1)
             patch(PlotObject.Stimulus_157_x(i,:), PlotObject.Stimulus_157_y(i,:),[0.7 0.7 0.7], 'EdgeColor','none','FaceAlpha', 0.5)
+       
         end
         hold off
     end
@@ -697,6 +716,7 @@ if size(PlotObject.Stimulus_left_x,1) < 1
         hold on
         for i = 1:size(PlotObject.Stimulus_168_x,1)
             patch(PlotObject.Stimulus_168_x(i,:), PlotObject.Stimulus_168_y(i,:),[0.5 0 0.2], 'EdgeColor','none','FaceAlpha', 0.5)
+      
         end
         hold off
     end
@@ -706,6 +726,7 @@ if size(PlotObject.Stimulus_left_x,1) < 1
         hold on
         for i = 1:size(PlotObject.Stimulus_180_x,1)
             patch(PlotObject.Stimulus_180_x(i,:), PlotObject.Stimulus_180_y(i,:),[1 0.2 0.5], 'EdgeColor','none','FaceAlpha', 0.5)
+      
         end
         hold off
     end
@@ -714,6 +735,7 @@ if size(PlotObject.Stimulus_left_x,1) < 1
         hold on
         for i = 1:size(PlotObject.Stimulus_202_x,1)
             patch(PlotObject.Stimulus_202_x(i,:), PlotObject.Stimulus_202_y(i,:),[0 0.5 0.5], 'EdgeColor','none','FaceAlpha', 0.5)
+       
         end
         hold off
     end
@@ -722,6 +744,7 @@ if size(PlotObject.Stimulus_left_x,1) < 1
         hold on
         for i = 1:size(PlotObject.Stimulus_225_x,1)
             patch(PlotObject.Stimulus_225_x(i,:), PlotObject.Stimulus_225_y(i,:),[0.2 0.7 0.2], 'EdgeColor','none','FaceAlpha', 0.5)
+      
         end
         hold off
     end
@@ -730,6 +753,7 @@ if size(PlotObject.Stimulus_left_x,1) < 1
         hold on
         for i = 1:size(PlotObject.Stimulus_247_x,1)
             patch(PlotObject.Stimulus_247_x(i,:), PlotObject.Stimulus_247_y(i,:),[0.7 0.2 0.7], 'EdgeColor','none','FaceAlpha', 0.5)
+     
         end
         hold off
     end
@@ -739,6 +763,7 @@ if size(PlotObject.Stimulus_left_x,1) < 1
         hold on
         for i = 1:size(PlotObject.Stimulus_270_x,1)
             patch(PlotObject.Stimulus_270_x(i,:), PlotObject.Stimulus_270_y(i,:),[0.5 1 0.2], 'EdgeColor','none','FaceAlpha', 0.5)
+       
         end
         hold off
     end
@@ -747,6 +772,7 @@ if size(PlotObject.Stimulus_left_x,1) < 1
         hold on
         for i = 1:size(PlotObject.Stimulus_292_x,1)
             patch(PlotObject.Stimulus_292_x(i,:), PlotObject.Stimulus_292_y(i,:),[0.7 0.7 0.2], 'EdgeColor','none','FaceAlpha', 0.5)
+     
         end
         hold off
     end
@@ -755,14 +781,16 @@ if size(PlotObject.Stimulus_left_x,1) < 1
         hold on
         for i = 1:size(PlotObject.Stimulus_315_x,1)
             patch(PlotObject.Stimulus_315_x(i,:), PlotObject.Stimulus_315_y(i,:),[0.2 0.2 0.7], 'EdgeColor','none','FaceAlpha', 0.5)
+      
         end
         hold off
     end
     
     if size(PlotObject.Stimulus_337_x,1) > 1
         hold on
-        for i = 1:size(PlotObject.this.this.Stimulus_337_x,1)
+        for i = 1:size(PlotObject.Stimulus_337_x,1)
             patch(PlotObject.Stimulus_337_x(i,:), PlotObject.Stimulus_337_y(i,:),[0.2 0.2 0.2], 'EdgeColor','none','FaceAlpha', 0.5)
+      
         end
         hold off
     end
@@ -794,6 +822,19 @@ if plot_two_windows == 1
     end
     hold off
 end
+
+function [x_coor,y_coor] = rotateLine(A,B,degrees)
+
+R=[ ...
+   cosd(degrees) -sind(degrees)
+   sind(degrees) cosd(degrees)
+   ];
+
+rData = R*[A;B];
+
+x_coor = rData(1,:);
+y_coor = rData(2,:);
+
 
 
 function SaveGUIImage(handles)
@@ -1052,7 +1093,7 @@ function pushbutton7_Callback(hObject, eventdata, handles)
 try
     CheckUserInputs(handles);
     ExtractFromSingleFile(handles);
-    
+    set(handles.text1,'String','Extracted Single File');
 catch err
     disp(err.message);
     set(handles.text1,'String',err.message );
@@ -1078,10 +1119,10 @@ analyzer =  ROIExtractionMain(Minsize, Maxsize, Method_av, Skipbeginning, Binary
 HideAllButtonsExceptStop(handles);
 try
     [globaldata.ROI_data globaldata.pathForSave] = analyzer.extractSingleFile(handles);
-    
 catch err
-    
+    set(handles.text1,'String',err.message );
     ShowAllButtonsExceptStop(handles);
+    rethrow(err);
 end
 
 ShowAllButtonsExceptStop(handles);
