@@ -1,4 +1,8 @@
 ####CalciumSignalExtract 
+
+-- Note: If you get the error "no file selected" and "input must be a row vector of characters" it usually means you didn't choose a tiff stack. You need to use one file which is made up of all the images you want to use (so one tiff stack) and it needs to be grayscale, not RGB etc. If you are unsure, open the file in ImageJ and check under 'image' that it matched 8 or 16bit and is saved as one tiff file as a stack. You can also create that tiff stack from a folder of individual images using imageJ (google that).
+
+
 A Matlab GUI that automatically segments fluorescence image stacks into ROIs based on differential morphology and fluorescence activity of the individual cells. The time course data of each ROI gets extracted and plotted.
 
 *Overview*
